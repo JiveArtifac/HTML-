@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Me | Amin Shakul Hameed</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="logo">Amin<span>.</span></div>
+
+    <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="tools.html">Tools</a>
+        <a href="cv.pdf" target="_blank" download>CV</a>
+    </div>
+
+    <label class="switch">
+        <input type="checkbox" onclick="toggleTheme()">
+        <span class="slider"></span>
+    </label>
+</nav>
+
+<div class="container">
+
+    <div class="card profile-card">
+        <img class="profile-pic" src="Amin.jpeg">
+
+        <div>
+            <h2>Amin Shakul Hameed</h2>
+            <div class="role">Student Developer</div>
+            <p>Creator of DOST Chatbot ("Friend")</p>
+            <p>Matric ID: A25DW0014</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>Education</h3>
+        <p>Diploma in Computer Science (Year 1 Semester 3)
+            
+        </p>
+    </div>
+    
+    <div class="card">
+        <h3>Skills</h3>
+        <ul>
+            <li>Programming: Python, JavaScript, HTML/CSS , C++</li>
+            <li>Tools: VS Code </li>
+        </ul>        
+    </div>
+    
+    <div class="card">
+        <h3>Interests</h3>
+        <p>AI, Web Development, Open Source, Gaming</p>
+
+    </div>
+
+    <div class="card">
+        <h3>Resume</h3>
+        <p>Download my <a href="cv.pdf" target="_blank" download>CV here</a>.</p>
+    </div>
+
+</div>
+
+<script>
+function toggleTheme() {
+    document.body.classList.toggle("dark");
+}
+</script>
+
+</body>
+</html>

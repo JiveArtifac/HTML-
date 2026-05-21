@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tools | Amin Shakul Hameed</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="logo">Amin<span>.</span></div>
+
+    <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="tools.html" class="active">Tools</a>
+        <a href="cv.pdf" target="_blank" download>CV</a>
+    </div>
+
+    <label class="switch">
+        <input type="checkbox" onclick="toggleTheme()">
+        <span class="slider"></span>
+    </label>
+</nav>
+
+<div class="container">
+
+    <div class="hero">
+        <h2>Developer Tools</h2>
+        <p>Simple utilities by Amin</p>
+    </div>
+
+    <div class="card">
+        <h3>Calculator</h3>
+
+        <input id="a" type="number" placeholder="Number 1">
+        <input id="b" type="number" placeholder="Number 2">
+
+        <button onclick="calc('+')">+</button>
+        <button onclick="calc('-')">-</button>
+        <button onclick="calc('*')">*</button>
+        <button onclick="calc('/')">/</button>
+
+        <div class="result" id="calcResult"></div>
+    </div>
+
+    <div class="card">
+        <h3>Income Tax</h3>
+        <input id="income" type="number">
+        <button onclick="taxCalc()">Calculate</button>
+        <div class="result" id="taxResult"></div>
+    </div>
+
+    <div class="card">
+        <h3>BMI Checker</h3>
+        <input id="weight" type="number" placeholder="kg">
+        <input id="height" type="number" placeholder="cm">
+        <button onclick="bmiCalc()">Check</button>
+        <div class="result" id="bmiResult"></div>
+    </div>
+
+    <div class="card">
+        <h3>Unit Converter</h3>
+
+        <input id="value" type="number">
+
+        <select id="type">
+            <option value="cm-m">cm → m</option>
+            <option value="m-cm">m → cm</option>
+            <option value="m-km">m → km</option>
+            <option value="km-m">km → m</option>
+        </select>
+
+        <button onclick="convert()">Convert</button>
+
+        <div class="result" id="convertResult"></div>
+    </div>
+
+</div>
+
+<script>
+function toggleTheme() {
+    document.body.classList.toggle("dark");
+}
+
+/* Calculator */
+function calc(op) {
+    let a = +document.getElementById("a").value;
+    let b = +document.getElementById("b").value;
+
+    let r = eval(a + op + b);
+    document.getElementById("calcResult").innerText = r;
+}
+
+/* Tax */
+function taxCalc() {
+    let i = +document.getElementById("income").value;
+    let t = i <= 5000 ? i*0.05 : i <= 20000 ? i*0.1 : i*0.15;
+    document.getElementById("taxResult").innerText = t;
+}
+
+/* BMI */
+function bmiCalc() {
+    let w = +document.getElementById("weight").value;
+    let h = +document.getElementById("height").value / 100;
+    document.getElementById("bmiResult").innerText = (w/(h*h)).toFixed(2);
+}
+
+/* Convert */
+function convert() {
+    let v = +document.getElementById("value").value;
+    let t = document.getElementById("type").value;
+
+    let r =
+        t=="cm-m"?v/100:
+        t=="m-cm"?v*100:
+        t=="m-km"?v/1000:
+        v*1000;
+
+    document.getElementById("convertResult").innerText = r;
+}
+</script>
+
+</body>
+</html>
